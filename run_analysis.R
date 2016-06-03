@@ -63,4 +63,6 @@ TidyData <- HARData[,2:82]
 #create the tidy dataset
 TidyData <- TidyData %>% group_by(SubjectLabel, Activity) %>% summarise_each(funs(mean))
 
+#export the tidy dateset
+write.table(TidyData, file = "TidyData.txt", row.names = FALSE)
 
